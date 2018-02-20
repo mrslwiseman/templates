@@ -1,0 +1,66 @@
+include partials/head
+include mixins/progress
+        
+body
+    header.header
+        nav.nav.nav--center
+            .header__logo Logo
+            .links
+                    a(class="nav__link" href='/') Home
+                    a(class="nav__link" href='/about') About
+                    a(class="nav__link" href='/work') Work
+                    a(class="nav__link" href='/process') Process
+                    a(class="nav__link" href='/services') Services
+                    a(class="nav__link" href='/testimonials') Testimonials
+                    a(class="nav__link" href='/contact') Contact
+    .section.section--hero.section--full-height
+        .section-image-container
+            img(class="section-image" srcset="./public/image-1-480w.jpg 480w, ./public/image-1-2048w.jpg 2048w" sizes="(max-width: 320px) 480px, 2048w" src="./public/image-1-2048w.jpg")
+        .section-content-wrapper
+            //- .section-image-wrapper
+            .section-text.section-text--right
+                h1 We Design and Develop
+                p.p--hero   Cillum nulla sint quis elit excepteur sint pariatur. Voluptate nostrud ipsum pariatur ullamco Lorem. 
+                button.button.button--primary Contact Us
+    .section.section--with-pad
+        .section-content-wrapper
+            //- .section-image
+            //-     img(class="" srcset="./public/image-3-480w.jpg 480w, ./public/image-3-2048w.jpg 2048w" sizes="(max-width: 480px) 480px, 2048w" src="./public/image-3-2048w.jpg")
+            .section-text.section-text--center
+                h2 About Us
+                p Tempor mollit proident ipsum veniam id deserunt. Officia minim magna duis nulla elit et mollit labore excepteur esse irure. Veniam proident labore et pariatur id. Quis laborum laboris excepteur elit. 
+                img(class="section-text--image-center" src="./public/signature.png")
+
+    .section.section--full-height
+        .section-image-container
+            img(class="section-image" srcset="./public/image-3-480w.jpg 480w, ./public/image-3-2048w.jpg 2048w" sizes="(max-width: 480px) 480px, 2048w" src="./public/image-3-2048w.jpg")
+        .section-content-wrapper
+            .section-text.section-text--left
+                .skill-levels
+                    h2 Professional Skills 
+                    +progress-scale('UI/UX Design', 70)
+                    +progress-scale('Web Development', 90)
+                    +progress-scale('Marketing', 45)
+    .section.stats.section--no-margin
+        .stats__stat
+            span.icon X
+            h4.stat__caption.text--inverted
+                span.stat__number 548
+                |  Projects Completed
+        .stats__stat
+            span.icon X
+            h4.stat__caption.text--inverted
+                span.stat__number 1465
+                |  Working Hours
+        .stats__stat
+            span.icon X
+            h4.stat__caption.text--inverted
+                span.stat__number 612
+                |  Positive Feedbacks
+        .stats__stat
+            span.icon X
+            h4.stat__caption.text--inverted
+                span.stat__number 735
+                |  Happy Clients
+   
+

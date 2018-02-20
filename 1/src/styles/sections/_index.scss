@@ -1,0 +1,87 @@
+@import "_progress";
+@import "_stats";
+
+.section-content-wrapper {
+    max-height: 100%;
+}
+
+.section {
+    position: relative;
+    min-height: 30%;
+}
+
+.section--no-margin {
+    margin: 0;
+}
+
+.section--with-pad {
+    padding: 20% 0;
+}
+
+.section--hero {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .section--full-height {
+        max-height: 100%;
+        overflow: hidden;
+    }
+}
+
+.section-text--center {
+    margin: 0 auto;
+}
+
+// by default flex child items are align-self: stretch
+.section-text--image-center {
+    align-self: center;
+}
+
+.section-image-container {
+
+    height: 50%;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 768px){
+    .section-image {
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+
+.section-text {
+    text-align: center;
+
+}
+// desktop
+@media screen and (min-width: 768px){
+    .section-text{
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        justify-content: center;
+    }
+    .section-text--left {
+        margin: 0 5%;
+        text-align: left;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+    }
+    .section-text--right {
+        margin: 0 5%;
+        text-align: left;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+   }
+
+   .section-text-center {
+       margin: 0 auto;
+   }
+}

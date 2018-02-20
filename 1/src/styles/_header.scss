@@ -1,0 +1,32 @@
+
+.header {
+    width: 100%;
+    @media screen and (min-width: $d){
+    }
+}
+
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    z-index:200;
+}
+
+.links {
+    margin-right: 20px;
+}
+
+.nav__link {
+    display: inline-block;
+    padding: 0 20px;
+    transition: all 200ms ease;
+}
+
+.nav__link:hover,
+.nav__link--active {
+    color: $primary-color;
+}

@@ -1,0 +1,26 @@
+.stats {
+    background-color: $primary-color;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.stats__stat {
+    // height: 300px;
+}
+
+.icon {
+    display: inline-block;
+}
+
+.stat__caption {
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.stat__number {
+    display: block;
+    margin-bottom: .5em;
+    font-size: 1.625em;
+}

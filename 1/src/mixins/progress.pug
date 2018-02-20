@@ -1,0 +1,11 @@
+mixin progress-scale(skillName, percent)
+    .skill-levels__skill
+        h4= skillName
+            span.skill-levels__skill-percent= `${percent}%`
+        - var width = 400;
+        - var height = 4;
+        - var progress = width * percent / 100;
+        svg(width=width height=height xmlns="http://www.w3.org/2000/svg")
+            g(stroke-width="4" fill="none" stroke-linecap="square")
+                path(d=`M1 1 L ${progress} 1` stroke="#10C9C3")
+                path(d=`M${progress} 1 L ${width} 1` stroke="#ddd")

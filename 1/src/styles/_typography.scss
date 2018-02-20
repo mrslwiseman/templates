@@ -1,0 +1,76 @@
+@import "_variables";
+@import "_typeplate";
+
+  body {
+    color: #444;
+    font-size: $baseFontSize;
+    @include font-nunito();
+    font-weight: 400;
+    font-size: $baseFontSize + px;
+}
+
+p {
+    line-height: 1.625em;
+    max-width: ($baseFontSize * 4.75) + ch;
+    margin-bottom: 0.77rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-rendering: optimizeLegibility;
+    
+    color: #222;
+    @include font-montserrat();
+    
+}
+
+h1 {
+    letter-spacing: -0.8px;
+    font-weight: 600;
+}
+
+h2 {
+    letter-spacing: -0.5px;
+    font-weight: 600;
+}
+
+h3 {
+    letter-spacing: -0.6px;
+    font-weight: 600;
+}
+
+h4 {
+letter-spacing: 0.82px;
+text-transform: uppercase;
+font-weight: 400;
+}
+
+h5 {
+    text-transform: uppercase;
+    letter-spacing: 0.82px;
+    
+}
+.p--hero {
+    font-size: 1.125em;
+    letter-spacing: 0.1px;
+}
+
+.nav__link {
+    @include font-montserrat();
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .81rem;
+    font-weight: 600;
+}
+
+.button {
+    @include font-montserrat();
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: .81rem;
+    text-transform: uppercase;
+}
+
+.text--inverted {
+    color: white;
+    font-weight: 600;
+}

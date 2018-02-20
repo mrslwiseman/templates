@@ -1,0 +1,108 @@
+@import "_typeplate_vars";
+@import "_variables";
+// $Context Calculator
+// -------------------------------------//
+// target / context = result
+//
+// @example             p { font-size: typl8-context-calc(24, 16, px, 18 * 1.65); }
+
+$typl8-heading-color: #222 !default;
+$typl8-copy-color: #444 !default;
+
+%typl8-hN {
+    text-rendering: optimizeLegibility;
+    line-height: 1;
+    margin-top: 0;
+    color: $typl8-heading-color;
+  }
+  
+  @mixin typl8-headings() {
+    @each $name, $size in $typl8-scale {
+      .#{$name} {
+        @extend %typl8-hN;
+        @include typl8-typescale(
+          $size,
+          $typl8-font-base,
+          $typl8-typescale-unit,
+          $typl8-measure
+        );
+      }
+    }
+  }
+  
+  @mixin typl8-headings-style() {
+    @each $h, $size in $typl8-headings {
+      #{$h} {
+        @extend .#{$size};
+      }
+    }
+  }
+  
+  
+
+
+@function typl8-context-calc($scale, $base, $value) {
+    @return ($scale/$base) + $value;
+  }
+  
+  
+  // $Measure-Margin
+  // -------------------------------------//
+  // divide 1 unit of measure by given font-size & return relative value
+  
+  @function typl8-measure-margin($scale, $measure, $value) {
+    $pixelValue: $scale/$measure; // ($measure/$scale) issue#40 https://github.com/typeplate/starter-kit/issues/40
+    $remValue: $pixelValue * $typl8-font-base;
+  
+    @if $value == rem {
+      @return $pixelValue + $value;
+    } @else if $value == em {
+      @return ($remValue/$scale) + $value;
+    } @else {
+      @return $remValue * 1px;
+    }
+  }
+
+
+@mixin typl8-typescale($scale, $base, $value, $measure:"") {
+    @if $value == rem {
+      font-size: typl8-context-calc($scale, $base, $value);
+    } @else if $value == em {
+      font-size: typl8-context-calc($scale, $base, $value);
+    } @else {
+      font-size: $scale * 1px;
+    }
+  
+    @if $measure != "" {
+      @if $value == rem {
+        margin-bottom: typl8-measure-margin($scale, $measure, $value);
+      } @else if $value == em {
+        margin-bottom: typl8-measure-margin($scale, $measure, $value: rem);
+      } @else {
+        margin-bottom: typl8-measure-margin($scale, $measure, $value: px);
+      }
+    }
+  }
+
+
+
+  @mixin typl8-headings() {
+    @each $name, $size in $typl8-scale {
+      .#{$name} {
+        @extend %typl8-hN;
+        @include typl8-typescale(
+          $size,
+          $typl8-font-base,
+          $typl8-typescale-unit,
+          $typl8-measure
+        );
+      }
+    }
+  }
+
+  // $Headings
+// http://codepen.io/grayghostvisuals/pen/IKsbw
+// -------------------------------------//
+
+@include typl8-headings;
+@include typl8-headings-style;

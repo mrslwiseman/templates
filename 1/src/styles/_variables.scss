@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Nunito:400,600');
+// breakpoints
+$d: 1024px;
+
+$primary-color: #00E1C2;
+
+$heading-color:#222;
+$copy-color:#444;
+$baseFontSize: 16;
+
+@mixin font-nunito(){
+    font-family: 'Nunito', sans-serif;
+}
+
+@mixin font-montserrat(){
+    font-family: 'Montserrat', sans-serif;
+}
